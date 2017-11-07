@@ -1,0 +1,127 @@
+<?php
+
+namespace GameBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Faction
+ *
+ * @ORM\Table(name="faction")
+ * @ORM\Entity(repositoryClass="GameBundle\Repository\FactionRepository")
+ */
+class Faction
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100, unique=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="point", type="integer")
+     */
+    private $point;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Faction
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Faction
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set point
+     *
+     * @param integer $point
+     *
+     * @return Faction
+     */
+    public function setPoint($point)
+    {
+        $this->point = $point;
+
+        return $this;
+    }
+
+    /**
+     * Get point
+     *
+     * @return int
+     */
+    public function getPoint()
+    {
+        return $this->point;
+    }
+}
