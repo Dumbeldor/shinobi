@@ -1,0 +1,11 @@
+<div id="menu" class="top-bar">
+    {# SI ADMIN alors afficher le menu ADMIN#}
+    {% if is_granted('ROLE_ADMIN') %}
+
+    {% endif %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+    {% else %}
+
+    {% endif %}
+</div>

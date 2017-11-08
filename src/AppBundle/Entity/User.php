@@ -24,50 +24,50 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="GameBundle\Entity\Faction", mappedBy="user")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="GameBundle\Entity\Faction", inversedBy="users")
+     * @ORM\JoinColumn(name="faction_id", referencedColumnName="id", nullable=false)
      */
     protected $faction;
 
     /**
-     * @ORM\OneToOne(targetEntity="GameBundle\Entity\Classe", mappedBy="user")
+     * @ORM\OneToOne(targetEntity="GameBundle\Entity\Classe")
      */
     protected $classe;
 
     /**
      * @ORM\Column(name="lvl", type="integer")
      */
-    private $lvl;
+    private $lvl = 1;
 
     /**
      * @ORM\Column(name="exp", type="integer")
      */
-    private $exp;
+    private $exp = 0;
 
     /**
      * @ORM\Column(name="life", type="integer")
      */
-    private $life;
+    private $life = 100;
 
     /**
      * @ORM\Column(name="chakra", type="integer")
      */
-    private $chakra;
+    private $chakra = 100;
 
     /**
      * @ORM\Column(name="tai", type="integer")
      */
-    private $tai;
+    private $tai = 10;
 
     /**
      * @ORM\Column(name="nin", type="integer")
      */
-    private $nin;
+    private $nin = 10;
 
     /**
      * @ORM\Column(name="gen", type="integer")
      */
-    private $gen;
+    private $gen = 10;
 
 
     public function __construct()

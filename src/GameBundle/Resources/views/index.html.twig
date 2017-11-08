@@ -1,0 +1,28 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/design.css') }}">
+
+    <title>{% block title %}Shinobi | {#{{ title }}#}{% endblock %}</title>
+</head>
+<body>
+
+{{ include('GameBundle::infoUser.html.twig') }}
+
+{% block sidebar %}
+    {{ include('GameBundle::menu.html.twig') }}
+{% endblock %}
+
+<div id="content" class="row">
+    {% block body %}{% endblock %}
+</div>
+</body>
+
+{% block js %}
+    <script src="{{ asset('js/app.js') }}"></script>
+{% endblock %}
+
+</html>

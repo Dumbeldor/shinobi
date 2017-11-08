@@ -42,6 +42,11 @@ class Faction
      */
     private $point;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\User", mappedBy="faction")
+     */
+    private $users;
+
 
     /**
      * Get id
