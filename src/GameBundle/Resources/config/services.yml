@@ -1,4 +1,7 @@
 services:
-#    game.example:
-#        class: GameBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    admin.classe:
+        class: GameBundle\Admin\ClasseAdmin
+        arguments: [~, GameBundle\Entity\Classe, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Classe }
+        public: true
